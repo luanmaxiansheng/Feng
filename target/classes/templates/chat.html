@@ -25,7 +25,6 @@
     var stomp = Stomp.over(sock);
     stomp.connect('guest','guest',function (frame) {
         stomp.subscribe("/user/queue/notifications", handleNotification);
-        // stomp.subscribe("/topic/public",handleNotification);
     });
     function handleNotification(message) {
         $("#output").append("<b>Received： "+message.body+"</b><br/>")
